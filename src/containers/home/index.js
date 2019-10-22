@@ -14,35 +14,33 @@ class Home extends Component {
     const { logout } = this.props
     logout()
   }
+  onLogin = () => {
+    const { push } = this.props
+    push('/login')
+  }
   renderUser = () => {
     const { user, isSignIn } = this.props
     if (isSignIn) {
       return (
         <div>
-          <h2>Hello {user.username}</h2>
-          <button onClick={this.onClick}>Log Out</button>
+          <h3>Hello {user.username}</h3>
+          <button class="btn btn-primary" type="submit" onClick={this.onClick}>
+            Log Out
+          </button>
         </div>
       )
     }
-    return <button onClick={() => push('/login')}>Log In</button>
-  }
-  renderPosts = () => {
-    const { posts } = this.props
-    return posts.map(({ content, objectId }) => {
-      return (
-        <li key={objectId}>
-          <Link to={`/post/${objectId}`}>{content}</Link>
-        </li>
-      )
-    })
-  }
-  render() {
     return (
-      <div className="logout">
-        {this.renderUser()}
-        <ul>{this.renderPosts()}</ul>
+      <div>
+        <button class="btn btn-primary" type="submit" onClick={this.onLogin}>
+          Log In
+        </button>
       </div>
     )
+  }
+
+  render() {
+    return <div className="logout">{this.renderUser()}</div>
   }
 }
 const mapStateToProps = state => ({

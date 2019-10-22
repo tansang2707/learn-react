@@ -20,9 +20,17 @@ const initState = {
 export default (state = initState, action) => {
   switch (action.type) {
     case LOGIN:
-      return { ...state, isSignIn: true }
+      return {
+        ...state,
+        isSignIn: true,
+        user: JSON.parse(
+          localStorage.getItem(`Parse/${process.env.REACT_APP_ID}/currentUser`)
+        )
+      }
     case LOGOUT:
-      return { ...state, isSignIn: false, token: null }
+      return { ...state, isSignIn: false, token: null, user: null }
+    case SIGNUP:
+      return { ...state }
     default:
       return state
   }
@@ -51,6 +59,7 @@ export const signup = (user, pass, email) => async dispatch => {
     u.set('email', email)
     u.set('password', pass)
     const response = await u.signUp()
+    console.log(response)
     dispatch(push('/login'))
   } catch (e) {
     console.log(e)

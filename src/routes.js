@@ -3,9 +3,11 @@ import About from './containers/about'
 import Login from './containers/signIn'
 import SignUp from './containers/signUp'
 import PostDetail from './containers/postdetail'
+import Posts from './containers/posts'
 
 const routes = [
   {
+    name: 'Home',
     path: '/',
     component: Home
   },
@@ -22,8 +24,12 @@ const routes = [
     component: SignUp
   },
   {
-    path: '/post/:id',
+    path: '/posts/:id',
     component: PostDetail
+  },
+  {
+    path: '/posts',
+    component: Posts
   }
 ]
 

@@ -28,30 +28,35 @@ class Login extends Component {
   render() {
     const { user, pass } = this.state
     return (
-      <div className="login">
-        <form onSubmit={this.onSubmit}>
-          <label htmlFor="">Username:</label>
-          <br />
-          <input
-            placeholder="username"
-            type="text"
-            name="user"
-            value={user}
-            onChange={this.onChange}
-          />
-          <br />
-          <label htmlFor="">Password:</label>
-          <br />
-          <input
-            placeholder="Pass ne con trai"
-            type="password"
-            name="pass"
-            value={pass}
-            onChange={this.onChange}
-          />
-          <br />
-          <button>Sign In</button>
-        </form>
+      <div>
+        <h2>Log in</h2>
+        <div className="form-group">
+          <form onSubmit={this.onSubmit}>
+            <label htmlFor="">Username:</label>
+            <br />
+            <input
+              className="form-control"
+              placeholder="username"
+              type="text"
+              name="user"
+              value={user}
+              onChange={this.onChange}
+            />
+            <br />
+            <label htmlFor="">Password:</label>
+            <br />
+            <input
+              className="form-control"
+              placeholder="Password"
+              type="password"
+              name="pass"
+              value={pass}
+              onChange={this.onChange}
+            />
+            <br />
+            <button className="btn btn-outline-success">Sign In</button>
+          </form>
+        </div>
       </div>
     )
   }
