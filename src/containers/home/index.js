@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { logout } from '../../modules/auth'
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
@@ -40,7 +39,7 @@ class Home extends Component {
   }
 
   render() {
-    return <div className="logout">{this.renderUser()}</div>
+    return <div></div>
   }
 }
 const mapStateToProps = state => ({

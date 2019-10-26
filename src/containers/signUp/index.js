@@ -27,7 +27,7 @@ class SignUp extends Component {
     const { user, pass, email, confirm_pass } = this.state
     return (
       <div>
-        <h2>SIGN UP</h2>
+        <h2>SIGN Up</h2>
         <div className="form-group">
           <form onSubmit={this.onSubmit}>
             <label htmlFor="">UserName</label>

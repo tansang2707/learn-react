@@ -13,13 +13,11 @@ class Posts extends Component {
   renderPosts = () => {
     const { posts } = this.props
     return (
-      <ul>
+      <ul className="list-group">
         {posts.map(({ content, objectId }) => {
           return (
-            <li className="list-group-item">
-              <Link key={objectId} to={`/posts/${objectId}`}>
-                {content}
-              </Link>
+            <li className="list-group-item" key={objectId}>
+              <Link to={`/posts/${objectId}`}>{content}</Link>
             </li>
           )
         })}

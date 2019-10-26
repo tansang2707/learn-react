@@ -1,6 +1,7 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import routes from '../../routes'
+import Header from '../Header'
 import './app.scss'
 
 const renderRoutes = () => {
@@ -11,7 +12,7 @@ const renderRoutes = () => {
 
 const App = () => (
   <div>
-    <header>
+    {/* <header>
       <div className="container-fluid">
         <ul className="nav">
           <li className="nav-item">
@@ -26,7 +27,8 @@ const App = () => (
           </li>
         </ul>
       </div>
-    </header>
+    </header> */}
+    <Header />
 
     <main>{renderRoutes()}</main>
   </div>

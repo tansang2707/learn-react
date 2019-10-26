@@ -12,22 +12,19 @@ const routes = [
     component: Home
   },
   {
+    name: 'About',
     path: '/about-us',
     component: About
   },
   {
+    name: 'Login',
     path: '/login',
     component: Login
   },
+  { name: 'SignUp', path: '/signup', component: SignUp },
+  { name: 'PostDetail', path: '/posts/:id', component: PostDetail },
   {
-    path: '/signup',
-    component: SignUp
-  },
-  {
-    path: '/posts/:id',
-    component: PostDetail
-  },
-  {
+    name: 'Posts',
     path: '/posts',
     component: Posts
   }
